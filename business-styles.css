@@ -1,0 +1,659 @@
+/* Business Page Specific Styles */
+
+/* Import shared navbar and footer styles */
+@import url('styles.css');
+
+/* Business page specific navbar styling */
+.business-hero ~ * .site-header,
+body:has(.business-hero) .site-header {
+    background: transparent;
+}
+
+.business-hero ~ * .site-header.scrolled,
+body:has(.business-hero) .site-header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.business-hero ~ * .brand-text,
+body:has(.business-hero) .brand-text {
+    color: #333;
+}
+
+.business-hero ~ * .nav-links a,
+body:has(.business-hero) .nav-links a {
+    color: #333;
+}
+
+.business-hero ~ * .nav-links a:hover,
+body:has(.business-hero) .nav-links a:hover {
+    color: #627144;
+}
+
+.business-hero ~ * .nav-toggle span,
+body:has(.business-hero) .nav-toggle span {
+    background: #000;
+}
+
+/* Mobile menu styling for business page */
+.business-hero ~ * .nav-links.active,
+body:has(.business-hero) .nav-links.active {
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.business-hero ~ * .nav-close,
+body:has(.business-hero) .nav-close {
+    color: #333;
+}
+
+/* Business page hero - placeholder for now */
+.business-hero {
+    background: #F5F4F0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50% / 50% */
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1rem 2rem 6rem; /* increase left x-axis padding */
+    gap: 3rem;
+    color: #333;
+}
+
+.business-hero .hero-content {
+    max-width: 640px; /* narrower for focus */
+}
+
+.business-hero .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500; /* medium */
+    font-size: 72px;
+    line-height: 1.1;
+    color: #333;
+    margin-bottom: 1.25rem; /* slightly more space below title */
+}
+
+.business-hero .hero-subtitle {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 400; /* ensure available weight */
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 2rem; /* more space before buttons */
+}
+
+.business-hero .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.business-hero .hero-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsive for business page */
+@media (max-width: 900px) {
+    .business-hero { 
+        grid-template-columns: 1fr; 
+        padding: 2rem 1rem; 
+        gap: 2rem;
+    }
+    .business-hero .hero-content { 
+        max-width: 100%; 
+        text-align: center;
+    }
+    .business-hero .hero-image {
+        order: -1; /* Move image above text on mobile */
+    }
+}
+
+@media (max-width: 600px) {
+    .business-hero .hero-title { 
+        font-size: 40px; 
+        font-weight: 500; 
+        margin-bottom: 2rem; 
+    }
+    .business-hero .hero-subtitle { 
+        font-size: 14px; 
+        font-weight: 500; 
+        margin-bottom: 3rem; 
+    }
+    .business-hero .hero-img {
+        max-width: 100%;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .business-hero .hero-title { 
+        font-size: 40px; 
+        font-weight: 500; 
+        margin-bottom: 1.75rem; 
+    }
+    .business-hero .hero-subtitle { 
+        font-size: 14px; 
+        font-weight: 500; 
+        margin-bottom: 2.75rem; 
+    }
+}
+
+/* Services for Corporates section */
+.services-corporates {
+    padding: 6rem 1rem;
+    background: url('assets/images/service-business.png') center / cover no-repeat;
+    background-color: #f8f8f8; /* fallback color */
+}
+
+.services-corporates-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-corporates-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 4rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-items: center;
+    margin-bottom: 3rem;
+}
+
+.service-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 5px 9px 0px 0px #E3E8E3AB;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 500px;
+    width: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 5px 9px 0px 0px #E3E8E3AB;
+}
+
+.service-card-title {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.service-card-description {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.service-card-link {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.service-card-link:hover {
+    color: #627144;
+}
+
+.services-cta {
+    text-align: center;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: #333;
+}
+
+/* Why Choose MBT section */
+.why-choose-mbt {
+    padding: 6rem 1rem;
+    background: #FBF9EF;
+}
+
+.why-choose-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.why-choose-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    align-items: center;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 80px;
+    font-weight: 700;
+    color: #627144;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.stat-text {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* MBT Workshops section */
+.mbt-workshops {
+    padding: 6rem 1rem;
+    background: url('assets/images/bg-paint-texture.png') center / cover no-repeat;
+    background-color: #f8f8f8; /* fallback color */
+}
+
+.mbt-workshops-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mbt-workshops-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 500;
+    text-align: center;
+    color: #333;
+    margin-bottom: 4rem;
+}
+
+.workshops-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.workshop-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 5px 9px 0px 0px #E3E8E3AB;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.workshop-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 5px 9px 0px 0px #E3E8E3AB;
+}
+
+.workshop-card-title {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.workshop-card-description {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.workshop-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.calendar-icon {
+    opacity: 0.7;
+}
+
+.date-text {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #627144;
+}
+
+/* Workshop Showcase section */
+.workshop-showcase {
+    padding: 6rem 0;
+    background: #f8f8f8;
+    overflow: hidden;
+}
+
+.workshop-showcase-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.workshop-showcase-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+.workshop-showcase-image {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    height: 300px;
+    overflow: hidden;
+}
+
+.scrolling-container {
+    display: flex;
+    width: 200%;
+    height: 100%;
+    animation: scrollRightToLeft 20s linear infinite;
+}
+
+.carousel-img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
+
+@keyframes scrollRightToLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Workplace Wellness section */
+.workplace-wellness {
+    padding: 12rem 1rem;
+    background: url('assets/images/workplace-wellness.png') center / cover no-repeat;
+    background-color: #f8f8f8;
+    position: relative;
+}
+
+.workplace-wellness::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.workplace-wellness-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.workplace-wellness-content {
+    max-width: 600px;
+    padding-left: 2rem;
+}
+
+.workplace-wellness-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.workplace-wellness-subtitle {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+.btn-white {
+    background: #fff;
+    color: #333;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-white:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .services-corporates {
+        padding: 4rem 1rem;
+    }
+    
+    .services-corporates-title {
+        font-size: 36px;
+        margin-bottom: 3rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .service-card-title {
+        font-size: 18px;
+    }
+    
+    .service-card-description {
+        font-size: 15px;
+    }
+    
+    .service-card-link {
+        font-size: 15px;
+    }
+    
+    .why-choose-mbt {
+        padding: 4rem 1rem;
+    }
+    
+    .why-choose-title {
+        font-size: 36px;
+        margin-bottom: 3rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .stat-number {
+        font-size: 60px;
+    }
+    
+    .stat-text {
+        font-size: 16px;
+    }
+    
+    .mbt-workshops {
+        padding: 4rem 1rem;
+    }
+    
+    .mbt-workshops-title {
+        font-size: 36px;
+        margin-bottom: 3rem;
+    }
+    
+    .workshops-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .workshop-card-title {
+        font-size: 18px;
+    }
+    
+    .workshop-card-description {
+        font-size: 15px;
+    }
+    
+    .workshop-showcase {
+        padding: 4rem 1rem;
+    }
+    
+    .workshop-showcase-title {
+        font-size: 36px;
+        margin-bottom: 2.5rem;
+    }
+    
+    .workplace-wellness {
+        padding: 8rem 1rem;
+    }
+    
+    .workplace-wellness-content {
+        padding-left: 0;
+        text-align: center;
+    }
+    
+    .workplace-wellness-title {
+        font-size: 36px;
+    }
+    
+    .workplace-wellness-subtitle {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-corporates-title {
+        font-size: 32px;
+    }
+    
+    .service-card-title {
+        font-size: 16px;
+    }
+    
+    .service-card-description {
+        font-size: 14px;
+    }
+    
+    .service-card-link {
+        font-size: 14px;
+    }
+    
+    .why-choose-title {
+        font-size: 32px;
+    }
+    
+    .stat-number {
+        font-size: 50px;
+    }
+    
+    .stat-text {
+        font-size: 15px;
+    }
+    
+    .mbt-workshops-title {
+        font-size: 32px;
+    }
+    
+    .workshop-card-title {
+        font-size: 16px;
+    }
+    
+    .workshop-card-description {
+        font-size: 14px;
+    }
+    
+    .workshops-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .workshop-showcase-title {
+        font-size: 32px;
+    }
+    
+    .workplace-wellness-title {
+        font-size: 32px;
+    }
+    
+    .workplace-wellness-subtitle {
+        font-size: 15px;
+    }
+    
+    .btn-white {
+        padding: 12px 28px;
+        font-size: 15px;
+    }
+}
