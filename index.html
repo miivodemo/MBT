@@ -251,8 +251,6 @@
         // Defer hero video loading for better initial paint and LCP
         try {
             var loadHeroVideo = function() {
-                var mqSmall = window.matchMedia('(max-width: 600px)');
-                if (mqSmall.matches) return; // keep image on small screens
                 var video = document.getElementById('heroVideo');
                 if (!video) return;
                 var source = video.querySelector('source');
