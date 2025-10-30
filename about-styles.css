@@ -60,6 +60,11 @@
     }
 }
 
+/* Force mobile side nav text to black */
+@media (max-width: 900px) {
+    .site-header .nav-links a { color: #000; }
+}
+
 /* About content section */
 .about-content {
     padding: 6rem 1rem;
