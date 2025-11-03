@@ -257,3 +257,47 @@ body:has(.blogs-hero) .nav-close {
         font-size: 12px;
     }
 }
+
+/* Ready To Begin CTA (shared styles for blogs page) */
+.ready-begin {
+    background: #656F4E;
+    color: #fff;
+}
+
+.ready-begin-container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 0;
+    align-items: stretch;
+}
+
+.ready-begin-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 1.1;
+}
+
+.ready-begin-subtitle {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 1.5rem 0 2rem;
+    max-width: 720px;
+}
+
+.ready-begin-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.ready-begin-content { padding: 8rem 8rem; color: #fff; }
+.ready-begin-media { display: flex; justify-content: flex-end; height: 100%; }
+.ready-begin-image { width: 100%; height: 100%; border-radius: 0; padding: 0; object-fit: cover; display: block; }
+
+@media (max-width: 900px) {
+    .ready-begin-container { grid-template-columns: 1fr; }
+    .ready-begin-content { padding: 5rem 1.5rem; }
+    .ready-begin-title { font-size: 42px; }
+    .ready-begin-subtitle { font-size: 18px; }
+}

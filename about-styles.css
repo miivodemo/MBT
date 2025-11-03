@@ -287,6 +287,58 @@
     }
 }
 
+/* Ready To Begin CTA (About page) */
+.ready-begin {
+    background: #656F4E; /* deep olive */
+    color: #fff;
+}
+
+.ready-begin-container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0; /* no padding so image touches top/bottom */
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; /* slightly wider text column */
+    gap: 0; /* no internal gap; image flush to content */
+    align-items: stretch; /* make media span full height */
+}
+
+.ready-begin-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 1.1;
+}
+
+.ready-begin-subtitle {
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    margin: 1.5rem 0 2rem;
+    max-width: 720px;
+}
+
+.ready-begin-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* apply spacing only to the text column */
+.ready-begin-content { padding: 8rem 8rem; color: #fff; }
+
+.ready-begin-media { display: flex; justify-content: flex-end; height: 100%; }
+.ready-begin-image { width: 100%; height: 100%; border-radius: 0; padding: 0; object-fit: cover; display: block; }
+
+@media (max-width: 900px) {
+    .ready-begin-container { grid-template-columns: 1fr; }
+    .ready-begin-content { padding: 5rem 1.5rem; }
+    .ready-begin-title { font-size: 42px; }
+    .ready-begin-subtitle { font-size: 18px; }
+}
+
+@media (max-width: 600px) {
+    .ready-begin-title { font-size: 40px; font-weight: 500; margin-bottom: 2rem; }
+    .ready-begin-subtitle { font-size: 16px; font-weight: 500; margin-bottom: 3rem; }
+}
+
 @media (max-width: 480px) {
     .science-mindfulness-title {
         font-size: 32px;
