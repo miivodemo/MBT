@@ -106,6 +106,75 @@
             </div>
         </section>
         
+        <section class="video-testimonials">
+            <div class="video-testimonials-container">
+                <h2 class="video-testimonials-title">Testimonials</h2>
+                <div class="video-carousel">
+                    <div class="carousel-track" id="bizCarouselTrack">
+                        <article class="video-card">
+                            <div class="video-media">
+                                <img class="video" src="assets/images/testi1.png" alt="Testimonial 1">
+                            </div>
+                            <div class="video-meta">
+                                <div class="video-name">Neetha Shetty</div>
+                                <div class="video-role">Principal</div>
+                            </div>
+                        </article>
+                        <article class="video-card">
+                            <div class="video-media">
+                                <img class="video" src="assets/images/testi2.png" alt="Testimonial 2">
+                            </div>
+                            <div class="video-meta">
+                                <div class="video-name">Mira</div>
+                                <div class="video-role">Business Strategist</div>
+                            </div>
+                        </article>
+                        <article class="video-card">
+                            <div class="video-media">
+                                <img class="video" src="assets/images/testi3.png" alt="Testimonial 3">
+                            </div>
+                            <div class="video-meta">
+                                <div class="video-name">Danielle</div>
+                                <div class="video-role">Health Specialist</div>
+                            </div>
+                        </article>
+                        <!-- Duplicates to simulate longer carousel -->
+                        <article class="video-card">
+                            <div class="video-media">
+                                <img class="video" src="assets/images/testi2.png" alt="Testimonial 2 duplicate">
+                            </div>
+                            <div class="video-meta">
+                                <div class="video-name">Sofia</div>
+                                <div class="video-role">HR Lead</div>
+                            </div>
+                        </article>
+                        <article class="video-card">
+                            <div class="video-media">
+                                <img class="video" src="assets/images/testi1.png" alt="Testimonial 1 duplicate">
+                            </div>
+                            <div class="video-meta">
+                                <div class="video-name">Rohan</div>
+                                <div class="video-role">Team Lead</div>
+                            </div>
+                        </article>
+                        <article class="video-card">
+                            <div class="video-media">
+                                <img class="video" src="assets/images/testi3.png" alt="Testimonial 3 duplicate">
+                            </div>
+                            <div class="video-meta">
+                                <div class="video-name">Aisha</div>
+                                <div class="video-role">Wellness Coach</div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="carousel-arrow prev" aria-label="Previous" type="button">&#8592;</button>
+                        <button class="carousel-arrow next" aria-label="Next" type="button">&#8594;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section class="mbt-workshops">
             <div class="mbt-workshops-container">
                 <h2 class="mbt-workshops-title">MBT Workshops</h2>
@@ -237,6 +306,22 @@
 
         navClose.addEventListener('click', closeMenu);
         navBackdrop.addEventListener('click', closeMenu);
+
+        // Simple carousel scroll for business testimonials
+        (function(){
+          var track = document.getElementById('bizCarouselTrack');
+          if (!track) return;
+          var container = track.parentElement;
+          var prev = container.querySelector('.prev');
+          var next = container.querySelector('.next');
+          function getScrollAmount(){
+            // Scroll by one card width
+            var card = track.querySelector('.video-card');
+            return card ? card.getBoundingClientRect().width + 16 : track.clientWidth;
+          }
+          prev.addEventListener('click', function(){ track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' }); });
+          next.addEventListener('click', function(){ track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' }); });
+        })();
     </script>
 </body>
 </html>
