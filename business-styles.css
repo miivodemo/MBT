@@ -133,12 +133,16 @@ body:has(.business-hero) .nav-close {
 @media (max-width: 900px) {
     .business-hero { 
         grid-template-columns: 1fr; 
-        padding: 2rem 1rem; 
+        padding: 4rem 1rem 2rem; 
         gap: 2rem;
     }
     .business-hero .hero-content { 
         max-width: 100%; 
         text-align: center;
+    }
+    .business-hero .hero-actions {
+        justify-content: center;
+        align-items: center;
     }
     .business-hero .hero-image {
         order: -1; /* Move image above text on mobile */

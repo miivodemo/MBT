@@ -106,7 +106,7 @@
                     <p class="ready-begin-subtitle">Discover how Mind-Body Therapy can help you reduce stress, restore balance, and build lasting wellbeing — for yourself or your organization.</p>
                     <div class="ready-begin-actions">
                         <a href="#book" class="btn btn-light">Book A Session</a>
-                        <a href="#corporate" class="btn btn-ghost">Corporate Wellness</a>
+                        <a href="business.html" class="btn btn-ghost">Corporate Wellness</a>
                     </div>
                 </div>
                 <div class="ready-begin-media">
@@ -150,36 +150,41 @@
     </footer>
 
     <script>
-        // Navbar scroll effect
-        const siteHeader = document.getElementById('siteHeader');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                siteHeader.classList.add('scrolled');
-            } else {
-                siteHeader.classList.remove('scrolled');
-            }
-        });
+        (function() {
+            const siteHeader = document.getElementById('siteHeader');
+            const navToggle = document.getElementById('navToggle');
+            const navClose = document.getElementById('navClose');
+            const navBackdrop = document.getElementById('navBackdrop');
 
-        // Mobile menu toggle
-        const navToggle = document.getElementById('navToggle');
-        const navClose = document.getElementById('navClose');
-        const navBackdrop = document.getElementById('navBackdrop');
-        const siteNav = document.getElementById('siteNav');
+            if (!siteHeader || !navToggle || !navClose || !navBackdrop) return;
 
-        navToggle.addEventListener('click', () => {
-            siteNav.classList.add('active');
-            navBackdrop.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+            const onScroll = () => {
+                if (window.scrollY > 50) {
+                    siteHeader.classList.add('scrolled');
+                } else {
+                    siteHeader.classList.remove('scrolled');
+                }
+            };
 
-        const closeMenu = () => {
-            siteNav.classList.remove('active');
-            navBackdrop.classList.remove('active');
-            document.body.style.overflow = '';
-        };
+            const closeMenu = () => {
+                siteHeader.classList.remove('menu-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            };
 
-        navClose.addEventListener('click', closeMenu);
-        navBackdrop.addEventListener('click', closeMenu);
+            const toggleMenu = () => {
+                const isOpen = siteHeader.classList.toggle('menu-open');
+                navToggle.setAttribute('aria-expanded', String(isOpen));
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            };
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+
+            navToggle.addEventListener('click', toggleMenu);
+            navClose.addEventListener('click', closeMenu);
+            navBackdrop.addEventListener('click', closeMenu);
+        })();
     </script>
 </body>
 </html>

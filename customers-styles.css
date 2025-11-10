@@ -104,12 +104,16 @@ body:has(.customers-hero) .nav-close {
 @media (max-width: 900px) {
     .customers-hero { 
         grid-template-columns: 1fr; 
-        padding: 2rem 1rem; 
+        padding: 4rem 1rem 2rem;
         gap: 2rem;
     }
     .customers-hero .hero-content { 
         max-width: 100%; 
         text-align: center;
+    }
+    .customers-hero .hero-actions {
+        justify-content: center;
+        align-items: center;
     }
     .customers-hero .hero-image {
         order: -1; /* Move image above text on mobile */
