@@ -588,8 +588,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6rem;
-    flex-wrap: wrap;
+    gap: 3rem;
+    flex-wrap: nowrap;
 }
 
 .affiliate-logo {
@@ -614,11 +614,11 @@ body {
     }
     
     .affiliated-logos {
-        gap: 3rem;
+        gap: 2rem;
     }
     
     .affiliate-logo {
-        max-width: 200px;
+        max-width: 150px;
     }
 }
 
@@ -628,12 +628,12 @@ body {
     }
     
     .affiliated-logos {
-        flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem;
+        flex-wrap: wrap;
     }
     
     .affiliate-logo {
-        max-width: 220px;
+        max-width: 100px;
     }
 }
 
@@ -710,7 +710,7 @@ body {
 .footer-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
 .footer-brand-text { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 24px; color: #222; }
 .footer-logo { display: block; }
-.footer-affiliates { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+.footer-affiliates { display: flex; gap: 1rem; flex-wrap: nowrap; align-items: center; }
 .footer-affiliate-logo { max-width: 80px; height: auto; object-fit: contain; opacity: 0.8; transition: opacity 0.3s ease; }
 .footer-affiliate-logo:hover { opacity: 1; }
 
